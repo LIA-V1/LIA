@@ -22,9 +22,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # para cargarlo como paquete Python (igual que en local con 'adk web .')
 COPY . ./LIA
 
-# Exponer el puerto por defecto de ADK (8000)
-EXPOSE 8000
+# Cloud Run inyecta la variable PORT (por defecto 8080)
+# NO usar un puerto fijo; usar $PORT para compatibilidad
+EXPOSE 8080
 
 # Comando para ejecutar el agente con la interfaz web
-# ADK buscará la carpeta 'LIA' como paquete y cargará root_agent
-CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8000"]
+# Usamos shell form para que $PORT se interpole correctamente
+CMD adk web --host 0.0.0.0 --port ${PORT:-8080}
