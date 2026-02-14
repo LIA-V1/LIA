@@ -11,9 +11,9 @@ import logging
 
 from google.adk.agents import LlmAgent
 
-from ...schemas import IntakeOutput
-from ...prompt_builder import create_instruction_provider
-from ... import config
+from schemas import IntakeOutput
+from prompt_builder import create_instruction_provider
+import config
 
 logger = logging.getLogger(__name__)
 

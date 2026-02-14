@@ -11,11 +11,11 @@ import logging
 
 from google.adk.agents import LlmAgent
 
-from .pipeline import pipeline
-from .callbacks import auto_save_report
-from .knowledge_manager import knowledge_manager
-from .tools import set_session_config
-from . import config
+from pipeline import pipeline
+from callbacks import auto_save_report
+from knowledge_manager import knowledge_manager
+from tools import set_session_config
+import config
 
 logger = logging.getLogger(__name__)
 

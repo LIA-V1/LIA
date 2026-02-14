@@ -10,7 +10,7 @@ y retorna la instrucción completa con:
 """
 import logging
 
-from .knowledge_manager import knowledge_manager
+from knowledge_manager import knowledge_manager
 
 logger = logging.getLogger(__name__)
 

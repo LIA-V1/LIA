@@ -12,7 +12,7 @@ import logging
 
 from google.adk.agents import SequentialAgent
 
-from .agents import (
+from agents import (
     intake_agent,
     auditor_agent,
     financial_agent,
@@ -20,7 +20,7 @@ from .agents import (
     ceo_agent,
     reporter_agent,
 )
-from .callbacks import validate_pipeline_state, log_agent_execution
+from callbacks import validate_pipeline_state, log_agent_execution
 
 logger = logging.getLogger(__name__)
 
