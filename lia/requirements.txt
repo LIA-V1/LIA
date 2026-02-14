@@ -1,0 +1,14 @@
+# =============================================================================
+# LIA V3 — Dependencias
+# =============================================================================
+# Instalar con: pip install -r requirements.txt
+# Python requerido: >= 3.12
+
+# Google Agent Development Kit (incluye google-genai)
+google-adk>=1.0.0
+
+# Schemas y validación de datos
+pydantic>=2.0.0
+
+# Variables de entorno
+python-dotenv>=1.0.0

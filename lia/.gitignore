@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+v1\
+
+# Local project specific
+.adk/
+output/
+
+# VS Code / IDEs
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+#ADK Libreria
+.adk\
+
+#Pruebas
+__pycache__\
