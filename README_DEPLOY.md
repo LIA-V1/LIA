@@ -27,9 +27,10 @@ Si quieres que Cloud Run se actualice automáticamente cada vez que hagas un `pu
 3.  Selecciona **"Implementar continuamente desde un repositorio"**.
 4.  Haz clic en **"CONFIGURAR CLOUD BUILD"**.
 5.  Selecciona tu proveedor (GitHub/Bitbucket) y elige tu repositorio.
-6.  En el tipo de compilación, selecciona **"Dockerfile"**.
-    > [!NOTE]
-    > Si elijes esta opción, necesitaremos crear un archivo llamado `Dockerfile` en la raíz de tu proyecto. Avísame si prefieres este camino y yo lo generaré por ti.
+6.  En la configuración de ejecución, selecciona **Dockerfile**. 
+
+   > [!TIP]
+   > He movido el `Dockerfile` y el `requirements.txt` a la raíz de tu repositorio `LIA/`. Ahora Google Cloud los encontrará automáticamente sin que tengas que configurar rutas manuales.
 
 ### ¿Qué hace este comando?
 - Empaqueta tu agente LIA.

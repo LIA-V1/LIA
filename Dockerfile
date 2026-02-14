@@ -17,13 +17,14 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el resto del código del proyecto
+# Copiar todo el contenido del repositorio (incluyendo la carpeta 'lia')
 COPY . .
 
 # Exponer el puerto por defecto de ADK (8000)
 EXPOSE 8000
 
 # Comando para ejecutar el agente con la interfaz web
-# --host 0.0.0.0 es crítico para que Cloud Run pueda acceder al contenedor
-# --port 8000 es el puerto esperado por defecto
+# Google Cloud Run pasará el puerto dinámicamente mediante la variable $PORT
+# pero por ahora forzamos 8000 para coincidir con el EXPOSE.
+# IMPORTANTE: Se asume que el agente raíz está expuesto como 'lia.root_agent'
 CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8000"]
