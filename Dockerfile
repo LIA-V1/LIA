@@ -17,14 +17,14 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar todo el contenido del repositorio (incluyendo la carpeta 'lia')
-COPY . .
+# Copiar todo el contenido del repositorio dentro de la carpeta 'LIA'
+# ADK necesita que el agente esté en un subdirectorio con __init__.py
+# para cargarlo como paquete Python (igual que en local con 'adk web .')
+COPY . ./LIA
 
 # Exponer el puerto por defecto de ADK (8000)
 EXPOSE 8000
 
 # Comando para ejecutar el agente con la interfaz web
-# Google Cloud Run pasará el puerto dinámicamente mediante la variable $PORT
-# pero por ahora forzamos 8000 para coincidir con el EXPOSE.
-# IMPORTANTE: Se asume que el agente raíz está expuesto como 'lia.root_agent'
+# ADK buscará la carpeta 'LIA' como paquete y cargará root_agent
 CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8000"]

@@ -11,7 +11,7 @@ import logging
 from pathlib import Path
 from typing import Dict, List
 
-import config
+from . import config
 
 logger = logging.getLogger(__name__)
 

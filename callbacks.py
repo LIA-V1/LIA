@@ -12,7 +12,7 @@ from pathlib import Path
 
 from google.genai import types
 
-import config
+from . import config
 
 logger = logging.getLogger(__name__)
 

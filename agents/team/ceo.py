@@ -9,9 +9,9 @@ import logging
 
 from google.adk.agents import LlmAgent
 
-from schemas import CeoOutput
-from prompt_builder import create_instruction_provider
-import config
+from ...schemas import CeoOutput
+from ...prompt_builder import create_instruction_provider
+from ... import config
 
 logger = logging.getLogger(__name__)
 
